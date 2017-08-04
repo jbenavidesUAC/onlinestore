@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class Autorizar extends CI_Controller {
+require_once 'AbstractController.php';
+class Autorizar extends AbstractController {
 
 	/**
 	 * Index Page for this controller.
@@ -21,6 +21,8 @@ class Autorizar extends CI_Controller {
 	{
 		$this->load->view('autorizar/index');
 	}
+
+	//registro de nuevos usuarios	
 }
 
 /* End of file welcome.php */

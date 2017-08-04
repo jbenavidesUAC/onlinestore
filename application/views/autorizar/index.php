@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    	<title>Log In</title>
+    	<title>Inicio de sesión</title>
     	<meta charset="utf-8">      <!-- Bootstrap -->
     	<link rel="stylesheet" type="text/css" href="/extra/bootstrap/css/bootstrap.min.css">
     	<link rel="stylesheet" href="/extra/bootstrap/css/bootstrap-theme.min.css">
@@ -16,16 +16,23 @@
   	<body>
  		<div class="container">
 	        <div class="card card-container">
-				<a href="#">Registro de usuario</a>
+				<div align="center"><a class="btn btn-primary" href="<?php echo base_url('usuarios/registrar_usuario') ?>">Registrar Nuevo Usuario</a></div><br>
 	            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
 	            <p id="profile-name" class="profile-name-card"></p>
-	            <form class="form-signin">
+	            <?php echo validation_errors(); ?>
+	            <?php echo form_open('verifylogin', array(
+						'class'=>'form-signin',		
+						'id' => 'fm_login',
+						'name' => 'fm_login',
+						'role' => 'form'
+					));
+				?>
 	                <span id="reauth-email" class="reauth-email"></span>
-	                <input type="email" id="inputEmail" class="form-control" placeholder="Direccion de Email" required autofocus>
-	                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+	                <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Direccion de Email" required autofocus>
+	                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
 	               
-	                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
-	            </form><!-- /form -->
+	                <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Entrar</button>
+	            <?php echo form_close();?>
 	            <a href="#" class="forgot-password">
 	                Olvidaste tu Password?
 	            </a>

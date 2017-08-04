@@ -12,7 +12,9 @@ File Encoding         : 65001
 
 Date: 2015-12-03 16:10:05
 */
-
+DROP DATABASE IF EXISTS bd_devonlinestore;
+CREATE DATABASE bd_devonlinestore;
+USE bd_devonlinestore;
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -44,13 +46,14 @@ CREATE TABLE `usuarios` (
   `apellidos` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `telefono` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
   `fotografia` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `creado_en` timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES ('1', 'admin@admin', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-12-01', 'admin', null, null, null);
+INSERT INTO `usuarios` VALUES ('1', 'admin@admin', '5f4dcc3b5aa765d61d8327deb882cf99', '2015-12-01', 'admin', null, null, null,now());
 
 -- ----------------------------
 -- Table structure for usuarios_tipos
