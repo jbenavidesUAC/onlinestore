@@ -30,8 +30,7 @@ class usuarios extends AbstractController
 
 	public function registrar_usuario()
 	{
-		if ($this->is_post())
-		{
+		if ($this->is_post()) {
 			$this->usuario->poblar_propiedades($this->arregloPost);
 			$this->usuario->insert();
 			redirect('autorizar/index');
@@ -46,96 +45,89 @@ class usuarios extends AbstractController
 		$arreglo_campos_usuario = array
 		(
 			'email' => array
-						(
-							'name' => 'email',
-							'id' => 'email',
-							'class' => 'form-control input-sx',
-							'value' => '',
-		 					'placeholder' => 'Ingrese su correo electrónico',
-		 					'data-error' => 'El correo es requerido',
-		 					'required' => 'required',
-		 					'type' => 'email'
-						),
-
+				(
+					'name' => 'email',
+					'id' => 'email',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'placeholder' => 'Ingrese su correo electrónico',
+					'data-error' => 'El correo es requerido',
+					'required' => 'required',
+					'type' => 'email'
+				),
 			'contrasena' => array
-						(
-							'name' => 'contrasena',
-							'id' => 'contrasena',
-							'class' => 'form-control input-sx',
-							'value' => '',
-							'placeholder' => 'Ingrese su contraseña',
-							'data-error' => 'La contraseña es necesaria',
-							'required' => 'required',
-							'type' => 'password'
-						),
-
+				(
+					'name' => 'contrasena',
+					'id' => 'contrasena',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'placeholder' => 'Ingrese su contraseña',
+					'data-error' => 'La contraseña es necesaria',
+					'required' => 'required',
+					'type' => 'password'
+				),
 			'confirmar_contrasena' => array
-						(
-						 	'name' => 'confirmar_contrasena',
-						 	'id' => 'confirmar_contrasena',
-						 	'class' => 'form-control input-sx',
-						 	'value' => '',
-						 	'placeholder' => 'Vuelva a ingresar la contraseña',
-						 	'data-error' => 'Debe volver a ingresar la contraseña',
-						 	'required' => 'required',
-						 	'data-match' => '#contrasena',
-						 	'type' => 'password'
-						),
-
+				(
+					'name' => 'confirmar_contrasena',
+					'id' => 'confirmar_contrasena',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'placeholder' => 'Vuelva a ingresar la contraseña',
+					'data-error' => 'Debe volver a ingresar la contraseña',
+					'required' => 'required',
+					'data-match' => '#contrasena',
+					'type' => 'password'
+				),
 			'cumpleanos' => array
-						(
-						 	'name' => 'cumpleanos',
-						 	'id' => 'cumpleanos',
-						 	'class' => 'form-control input-sx',
-						 	'value' => '',
-						 	'data-error' => 'El cumpleaños es requerido',
-						 	'required' => 'required',
-						 	'type' => 'date'
-						),
-
+				(
+					'name' => 'cumpleanos',
+					'id' => 'cumpleanos',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'data-error' => 'El cumpleaños es requerido',
+					'required' => 'required',
+					'type' => 'date'
+				),
 			'nombres' => array
-						(
-						 	'name' => 'nombres',
-						 	'id' => 'nombres',
-						 	'class' => 'form-control input-sx',
-						 	'value' => '',
-						 	'placeholder' => 'Ingrese sus nombres',
-						 	'data-error' => 'El nombre es requerido',
-						 	'required' => 'required',
-						 	'type' => 'text'
-						),
-
+				(
+					'name' => 'nombres',
+					'id' => 'nombres',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'placeholder' => 'Ingrese sus nombres',
+					'data-error' => 'El nombre es requerido',
+					'required' => 'required',
+					'type' => 'text'
+				),
 			'apellidos' => array
-						(
-						 	'name' => 'apellidos',
-						 	'id' => 'apellidos',
-						 	'class' => 'form-control input-sx',
-						 	'value' => '',
-						 	'placeholder' => 'Ingrese sus apellidos',
-						 	'data-error' => 'El apellido es requerido',
-						 	'required' => 'required',
-						 	'type' => 'text'
-						),
-
+				(
+					'name' => 'apellidos',
+					'id' => 'apellidos',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'placeholder' => 'Ingrese sus apellidos',
+					'data-error' => 'El apellido es requerido',
+					'required' => 'required',
+					'type' => 'text'
+				),
 			'telefono' => array
-						(
-						 	'name' => 'telefono',
-						 	'id' => 'telefono',
-						 	'class' => 'form-control input-sx',
-						 	'value' => '',
-						 	'placeholder' => 'Ingrese su celular',
-						 	'type' => 'text'
-						),
-
+				(
+					'name' => 'telefono',
+					'id' => 'telefono',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'placeholder' => 'Ingrese su celular',
+					'type' => 'text'
+				),
 			'fotografia' => array
-						(
-						 	'name' => 'fotografia',
-						 	'id' => 'fotografia',
-						 	'class' => 'form-control input-sx',
-						 	'value' => '',
-						 	'placeholder' => 'Ingrese una fotografía',
-						 	'type' => 'file'
-						)
+				(
+					'name' => 'fotografia',
+					'id' => 'fotografia',
+					'class' => 'form-control input-sx',
+					'value' => '',
+					'placeholder' => 'Ingrese una fotografía',
+					'type' => 'file'
+				)
 		);
 		return $arreglo_campos_usuario;
 	}
@@ -145,8 +137,3 @@ class usuarios extends AbstractController
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
-
-
-
-
-

@@ -39,7 +39,7 @@ INSERT INTO `relacion_usuarios_tipos` VALUES ('1', '1', '1');
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL UNIQUE,
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `cumpleanios` date DEFAULT NULL,
   `nombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
